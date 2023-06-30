@@ -1,5 +1,11 @@
+import Hero from "@components/home/Hero";
+
 export default function Home() {
   return (
-    <h1>Hello Weird!</h1>
-  )
+      <>
+          <div className="flex justify-center">
+              <Hero />
+          </div>
+      </>
+  );
 }
