@@ -17,7 +17,7 @@ export default async function DaftarSurah() {
                     return (
                         <CardSurah
                             key={data.nomor}
-                            href={`/surah/${data.namaLatin}`}
+                            href={`/surah/${data.nomor}`}
                             noSurah={data.nomor}
                             namaSurah={data.namaLatin}
                             artiSurah={data.arti}
