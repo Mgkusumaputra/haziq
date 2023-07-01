@@ -10,7 +10,7 @@ export function Navbar() {
 
     return (
         <>
-            <nav className="fixed top-0 left-0 right-0 flex items-center justify-center w-full py-4 px-6 bg-slate-50 dark:bg-slate-700">
+            <nav className="fixed top-0 left-0 right-0 z-20 flex items-center justify-center w-full py-4 px-6 bg-slate-50 dark:bg-slate-700">
                 <div className="flex items-center justify-between max-w-3xl w-full">
                     <strong className="font-semibold text-2xl">Haziq</strong>
                     <button
