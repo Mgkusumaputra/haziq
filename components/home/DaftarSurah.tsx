@@ -5,7 +5,7 @@ export default async function DaftarSurah() {
     const getSurah = await res.json();
 
     return (
-        <div className="w-full flex flex-col items-center px-6 max-w-5xl gap-3 mt-16 mx-auto">
+        <div className="w-full flex flex-col items-center px-6 max-w-5xl gap-3 mt-16 mb-7 mx-auto">
             <h1 className="text-2xl font-semibold underline">Daftar Surah</h1>
             <input
                 type="search"
