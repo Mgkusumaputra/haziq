@@ -10,6 +10,7 @@ interface headerSurahProps {
     namaSurahArab: string;
     tempatTurun: string;
     jumlahAyat: number;
+    audio: string;
 }
 
 export function AudioPaused() {
@@ -29,11 +30,17 @@ export function AudioPlayed() {
     );
 }
 
-export default function Header({ noSurah, namaSurahLatin, namaSurahArab, tempatTurun, jumlahAyat }: headerSurahProps) {
-    const audio = "paused";
+export default function Header({
+    noSurah,
+    namaSurahLatin,
+    namaSurahArab,
+    tempatTurun,
+    jumlahAyat,
+    audio,
+}: headerSurahProps) {
 
     return (
-        <div className="fixed left-0 right-0 z-20 mt-20 mx-auto max-w-5xl px-6">
+        <div className="w-full mt-20 mx-auto max-w-5xl px-6">
             <div className="flex flex-col w-full py-6 px-5 gap-2 bg-slate-50 dark:bg-slate-700">
                 <div className="flex items-center justify-center gap-4 text-2xl font-bold">
                     <div className="bg-sky-600 p-3 h-8 w-8 flex items-center justify-center rounded-xl text-gray-50">
