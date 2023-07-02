@@ -7,9 +7,9 @@ export default function Hero() {
                 <h1 className="font-bold text-3xl">Hello World</h1>
             </div>
             <div className="flex flex-col gap-3 md:grid md:grid-cols-3">
-                <CardHero href="/" title="Kumpulan Doa" />
+                <CardHero href="/doa" title="Kumpulan Doa" />
                 <CardHero href="/juz-amma" title="Juz Amma" />
-                <CardHero href="/" title="Ayat Favorit" />
+                <CardHero href="/bookmark" title="Ayat Favorit" />
             </div>
         </div>
     );
