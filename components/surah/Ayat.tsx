@@ -35,7 +35,7 @@ export default async function Ayat({ nomorAyat, ayatArab, ayatLatin, arti, audio
                         </button>
                     </div>
                 </div>
-                <p className="flex justify-end text-4xl mt-5">{ayatArab}</p>
+                <p className="flex justify-end text-4xl mt-5 font-arabic">{ayatArab}</p>
                 <div className="flex flex-col mt-3 divide-y-2 divide-solid">
                     <p className="text-sm pb-2 text-gray-800 dark:text-gray-200">{ayatLatin}</p>
                     <p className="pt-3">{arti}</p>
