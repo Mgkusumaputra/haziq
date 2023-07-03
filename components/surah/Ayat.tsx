@@ -57,7 +57,7 @@ export default function Ayat({ id, noSurah, namaSurah, nomorAyat, ayatArab, ayat
                         </button>
                     </div>
                 </div>
-                <p className="flex justify-end text-4xl mt-5 font-arabic">{ayatArab}</p>
+                <p className="flex justify-end text-right text-4xl mt-5 font-arabic">{ayatArab}</p>
                 <div className="flex flex-col mt-3 divide-y-2 divide-solid">
                     <p className="text-sm pb-2 text-gray-800 dark:text-gray-200">{ayatLatin}</p>
                     <p className="pt-3">{arti}</p>

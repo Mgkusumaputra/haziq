@@ -15,7 +15,7 @@ export default function CardBookmark({ href, id, namaSurah, nomorAyat }: cardBoo
                 <div className="bg-sky-600 p-3 h-8 w-8 flex items-center justify-center rounded-xl">
                     <span className="font-semibold text-base">{id}</span>
                 </div>
-                <div className="">
+                <div className="text-xl font-semibold">
                     <h1>
                         {namaSurah}: {nomorAyat}
                     </h1>

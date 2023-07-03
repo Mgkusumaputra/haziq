@@ -21,7 +21,7 @@ export default async function Surah({ params }: { params: { surah: number } }) {
                 />
                 <div className="w-full font-arabic mx-auto px-6 max-w-5xl">
                     <div className="flex justify-center py-8 px-7 rounded-md border border-sky-500 bg-slate-50 dark:bg-slate-700">
-                        <p className="text-4xl">بِسْمِ اللهِ الرَّحْمَنِ الرَّحِيْمِ</p>
+                        <p className="text-4xl text-right">بِسْمِ اللهِ الرَّحْمَنِ الرَّحِيْمِ</p>
                     </div>
                 </div>
             </div>
