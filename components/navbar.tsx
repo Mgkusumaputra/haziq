@@ -5,6 +5,7 @@ import { useTheme } from "next-themes";
 
 import Sun from "@icons/Sun";
 import Moon from "@icons/Moon";
+import HaziqLogo from "./icons/HaziqLogo";
 
 export function Navbar() {
     const { theme, setTheme } = useTheme();
@@ -15,6 +16,7 @@ export function Navbar() {
                 <div className="flex items-center justify-between max-w-5xl px-6 w-full">
                     <Link href="/">
                         <h2 className="flex items-center gap-2 font-bold text-2xl">
+                            <HaziqLogo  className="h-8 w-8"/>
                             Haziq
                         </h2>
                     </Link>
