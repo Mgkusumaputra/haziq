@@ -1,12 +1,16 @@
 "use client";
 
+import { useRef, useState } from "react";
+
+import { useBookmark } from "@hooks/useBookmark";
+
 import Pause from "@icons/Pause";
 import Play from "@icons/Play";
 import BookmarkSolid from "@icons/BookmarkSolid";
 import BookmarkOutline from "@icons/BookmarkOutline";
-import { useRef, useState } from "react";
 
 interface ayatProps {
+    nomorSurah: number;
     nomorAyat: number;
     ayatArab: string;
     ayatLatin: string;
@@ -14,9 +18,10 @@ interface ayatProps {
     audio: string;
 }
 
-export default function Ayat({ nomorAyat, ayatArab, ayatLatin, arti, audio }: ayatProps) {
-    const bookmark = "notsaved";
+export default function Ayat({ nomorSurah, nomorAyat, ayatArab, ayatLatin, arti, audio }: ayatProps) {
+      const { bookmark, toggleBookmark } = useBookmark(nomorSurah, nomorAyat);
 
+    
     const [audioStatus, setAudioStatus] = useState(false);
     const audioRef = useRef<HTMLAudioElement | null>(null);
 
@@ -46,13 +51,9 @@ export default function Ayat({ nomorAyat, ayatArab, ayatLatin, arti, audio }: ay
                             {audioStatus ? <Pause className="w-4 h-4" /> : <Play className="w-4 h-4" />}
                         </button>
                         <audio ref={audioRef} src={audio} onEnded={handleAudioEnded} />
-                        {/* <button className="dark:text-slate-50">
-                            {bookmark === "saved" ? (
-                                <BookmarkSolid className="w-4 h-4" />
-                            ) : (
-                                <BookmarkOutline className="w-4 h-4" />
-                            )}
-                        </button> */}
+                        <button className="dark:text-slate-50" onClick={toggleBookmark} >
+                            {bookmark ? <BookmarkSolid className="w-4 h-4" /> : <BookmarkOutline className="w-4 h-4" />}
+                        </button>
                     </div>
                 </div>
                 <p className="flex justify-end text-4xl mt-5 font-arabic">{ayatArab}</p>

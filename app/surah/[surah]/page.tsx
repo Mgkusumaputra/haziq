@@ -30,6 +30,7 @@ export default async function Surah({ params }: { params: { surah: number } }) {
                     return (
                         <Ayat
                             key={data.nomorAyat}
+                            nomorSurah={dataSurah.nomor}
                             nomorAyat={data.nomorAyat}
                             ayatArab={data.teksArab}
                             ayatLatin={data.teksLatin}
