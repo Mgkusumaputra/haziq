@@ -43,19 +43,33 @@ export default async function Surah({ params }: { params: { surah: number } }) {
                 })}
             </div>
             <div className="w-full mb-5 mx-auto max-w-5xl px-6">
-                <div className="flex flex-row justify-between w-full py-6 px-5 gap-2 rounded-md bg-slate-50 dark:bg-slate-700">
-                    <Link
-                        href={`/surah/${selectedSurah.data.suratSebelumnya.nomor}`}
-                        className="flex items-center justify-center gap-2 px-3 py-1 rounded-md bg-slate-200 dark:bg-slate-900"
-                    >
-                        {`< ${selectedSurah.data.suratSebelumnya.namaLatin}`}
-                    </Link>
-                    <Link
-                        href={`/surah/${selectedSurah.data.suratSelanjutnya.nomor}`}
-                        className="flex items-center justify-center gap-2 px-3 py-1 rounded-md bg-slate-200 dark:bg-slate-900"
-                    >
-                        {`${selectedSurah.data.suratSelanjutnya.namaLatin} >`}
-                    </Link>
+                <div className="flex flex-wrap w-full py-6 px-5 gap-2 rounded-md bg-slate-50 dark:bg-slate-700">
+                    <div className="w-full flex">
+                        <div className="w-1/2">
+                            <div className="text-sm text-left">
+                                {selectedSurah.data.suratSebelumnya && (
+                                    <Link
+                                        href={`/surah/${selectedSurah.data.suratSebelumnya.nomor}`}
+                                        className="px-4 py-2 rounded-md bg-slate-200 dark:bg-slate-900"
+                                    >
+                                        {`< ${selectedSurah.data.suratSebelumnya.namaLatin}`}
+                                    </Link>
+                                )}
+                            </div>
+                        </div>
+                        <div className="w-1/2">
+                            <div className="text-sm text-right">
+                                {selectedSurah.data.suratSelanjutnya && (
+                                    <Link
+                                        href={`/surah/${selectedSurah.data.suratSelanjutnya.nomor}`}
+                                        className="px-4 py-2 rounded-md bg-slate-200 dark:bg-slate-900"
+                                    >
+                                        {`${selectedSurah.data.suratSelanjutnya.namaLatin} >`}
+                                    </Link>
+                                )}
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
