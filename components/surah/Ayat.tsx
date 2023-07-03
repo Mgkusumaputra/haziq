@@ -10,7 +10,9 @@ import BookmarkSolid from "@icons/BookmarkSolid";
 import BookmarkOutline from "@icons/BookmarkOutline";
 
 interface ayatProps {
-    nomorSurah: number;
+    noSurah: number;
+    id: string;
+    namaSurah: string;
     nomorAyat: number;
     ayatArab: string;
     ayatLatin: string;
@@ -18,10 +20,9 @@ interface ayatProps {
     audio: string;
 }
 
-export default function Ayat({ nomorSurah, nomorAyat, ayatArab, ayatLatin, arti, audio }: ayatProps) {
-      const { bookmark, toggleBookmark } = useBookmark(nomorSurah, nomorAyat);
+export default function Ayat({ id, noSurah, namaSurah, nomorAyat, ayatArab, ayatLatin, arti, audio }: ayatProps) {
+    const { bookmark, toggleBookmark } = useBookmark(noSurah, namaSurah, nomorAyat);
 
-    
     const [audioStatus, setAudioStatus] = useState(false);
     const audioRef = useRef<HTMLAudioElement | null>(null);
 
@@ -42,7 +43,7 @@ export default function Ayat({ nomorSurah, nomorAyat, ayatArab, ayatLatin, arti,
     }
 
     return (
-        <div className="w-full mx-auto px-6 max-w-5xl">
+        <div id={id} className="w-full mx-auto px-6 max-w-5xl">
             <div className="flex flex-col py-8 px-7 gap-3 rounded-md border border-sky-500 bg-slate-50 dark:bg-slate-700">
                 <div className="flex flex-row justify-between w-full">
                     <p className="">{nomorAyat}</p>
@@ -51,7 +52,7 @@ export default function Ayat({ nomorSurah, nomorAyat, ayatArab, ayatLatin, arti,
                             {audioStatus ? <Pause className="w-4 h-4" /> : <Play className="w-4 h-4" />}
                         </button>
                         <audio ref={audioRef} src={audio} onEnded={handleAudioEnded} />
-                        <button className="dark:text-slate-50" onClick={toggleBookmark} >
+                        <button className="dark:text-slate-50" onClick={toggleBookmark}>
                             {bookmark ? <BookmarkSolid className="w-4 h-4" /> : <BookmarkOutline className="w-4 h-4" />}
                         </button>
                     </div>
