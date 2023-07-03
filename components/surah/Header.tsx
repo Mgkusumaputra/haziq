@@ -1,4 +1,6 @@
+"use client";
 import Link from "next/link";
+import { useEffect, useRef, useState } from "react";
 
 import Play from "@icons/Play";
 import Pause from "@icons/Pause";
@@ -38,6 +40,24 @@ export default function Header({
     jumlahAyat,
     audio,
 }: headerSurahProps) {
+    const [audioStatus, setAudioStatus] = useState(false);
+    const audioRef = useRef<HTMLAudioElement | null>(null);
+
+    function toggleAudio() {
+        if (!audioRef.current) return;
+
+        if (audioStatus) {
+            audioRef.current.pause();
+        } else {
+            audioRef.current.play();
+        }
+
+        setAudioStatus(!audioStatus);
+    }
+
+    function handleAudioEnded() {
+        setAudioStatus(false);
+    }
 
     return (
         <div className="w-full mt-20 mx-auto max-w-5xl px-6">
@@ -55,9 +75,13 @@ export default function Header({
                     <p>{jumlahAyat} Ayat</p>
                 </div>
                 <div className="flex flex-col mt-4 items-end gap-3 font-semibold">
-                    <button className="flex items-center justify-center gap-2 px-3 py-1 rounded-md bg-slate-200 dark:bg-slate-900">
-                        {audio === "played" ? <AudioPlayed /> : <AudioPaused />}
+                    <button
+                        onClick={toggleAudio}
+                        className="flex items-center justify-center gap-2 px-3 py-1 rounded-md bg-slate-200 dark:bg-slate-900"
+                    >
+                        {audioStatus ? <AudioPlayed /> : <AudioPaused />}
                     </button>
+                    <audio ref={audioRef} src={audio} onEnded={handleAudioEnded} />
                     <Link
                         href={`/tafsir/${noSurah}`}
                         className="flex items-center justify-center gap-2 px-3 py-1 rounded-md bg-slate-200 dark:bg-slate-900"

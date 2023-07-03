@@ -1,7 +1,10 @@
+"use client";
+
 import Pause from "@icons/Pause";
 import Play from "@icons/Play";
 import BookmarkSolid from "@icons/BookmarkSolid";
 import BookmarkOutline from "@icons/BookmarkOutline";
+import { useRef, useState } from "react";
 
 interface ayatProps {
     nomorAyat: number;
@@ -11,11 +14,27 @@ interface ayatProps {
     audio: string;
 }
 
-
-export default async function Ayat({ nomorAyat, ayatArab, ayatLatin, arti, audio }: ayatProps) {
-    // const audio = "paused";
+export default function Ayat({ nomorAyat, ayatArab, ayatLatin, arti, audio }: ayatProps) {
     const bookmark = "notsaved";
-    
+
+    const [audioStatus, setAudioStatus] = useState(false);
+    const audioRef = useRef<HTMLAudioElement | null>(null);
+
+    function toggleAudio() {
+        if (!audioRef.current) return;
+
+        if (audioStatus) {
+            audioRef.current.pause();
+        } else {
+            audioRef.current.play();
+        }
+
+        setAudioStatus(!audioStatus);
+    }
+
+    function handleAudioEnded() {
+        setAudioStatus(false);
+    }
 
     return (
         <div className="w-full mx-auto px-6 max-w-5xl">
@@ -23,16 +42,17 @@ export default async function Ayat({ nomorAyat, ayatArab, ayatLatin, arti, audio
                 <div className="flex flex-row justify-between w-full">
                     <p className="">{nomorAyat}</p>
                     <div className="flex gap-2">
-                        <button className="dark:text-slate-50" >
-                            {audio === "played" ? <Play className="w-4 h-4" /> : <Pause className="w-4 h-4" />}
+                        <button className="dark:text-slate-50" onClick={toggleAudio}>
+                            {audioStatus ? <Pause className="w-4 h-4" /> : <Play className="w-4 h-4" />}
                         </button>
-                        <button className="dark:text-slate-50">
+                        <audio ref={audioRef} src={audio} onEnded={handleAudioEnded} />
+                        {/* <button className="dark:text-slate-50">
                             {bookmark === "saved" ? (
                                 <BookmarkSolid className="w-4 h-4" />
                             ) : (
                                 <BookmarkOutline className="w-4 h-4" />
                             )}
-                        </button>
+                        </button> */}
                     </div>
                 </div>
                 <p className="flex justify-end text-4xl mt-5 font-arabic">{ayatArab}</p>
