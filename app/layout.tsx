@@ -1,7 +1,8 @@
 import "@styles/globals.css";
 import { Quicksand } from "next/font/google";
 
-import { Navbar } from "@components/Navbar";
+import { Navbar } from "@components/navbar";
+
 import ThemeProvider from "@hooks/useTheme";
 import Head from "next/head";
 
