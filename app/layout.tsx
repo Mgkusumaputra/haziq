@@ -5,6 +5,7 @@ import { Navbar } from "@components/navbar";
 
 import ThemeProvider from "@hooks/useTheme";
 import Head from "next/head";
+import Script from "next/script";
 
 const quicksand = Quicksand({
     subsets: ["latin"],
@@ -40,6 +41,11 @@ export const metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
     return (
         <html lang="en">
+            <Script
+                async
+                src="https://analytics.mgkusumaputra.me/script.js"
+                data-website-id={process.env.Website_ID}
+            />
             <ThemeProvider>
                 <body
                     className={`${quicksand.className} bg-slate-300 text-gray-950 dark:bg-slate-800 dark:text-gray-50`}
