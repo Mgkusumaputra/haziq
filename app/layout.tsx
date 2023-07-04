@@ -1,11 +1,10 @@
 import "@styles/globals.css";
 import { Quicksand } from "next/font/google";
+import Script from "next/script";
 
 import { Navbar } from "@components/navbar";
 
 import ThemeProvider from "@hooks/useTheme";
-import Head from "next/head";
-import Script from "next/script";
 
 const quicksand = Quicksand({
     subsets: ["latin"],
@@ -26,15 +25,15 @@ export const metadata = {
             "Nikmati pengalaman Membaca Al-Quran yang praktis dan interaktif dengan Haziq. Baca Al-Quran dan tafsir ayat dalam bahasa Indonesia dengan mudah",
         url: "https://haziq.mgkusumaputra.me",
         siteName: "Next.js",
-        images: ["/images/OG_Banner.png"],
+        images: ["https://res.cloudinary.com/dspkhqhkv/image/upload/v1688470466/Haziq/OG_Banner.png"],
         type: "website",
     },
     twitter: {
-        card: "/images/OG_Banner.png",
+        card: "https://res.cloudinary.com/dspkhqhkv/image/upload/v1688470466/Haziq/OG_Banner.png",
         title: "Haziq - Al-Quran Online Bahasa Indonesia",
         description:
             "Nikmati pengalaman Membaca Al-Quran yang praktis dan interaktif dengan Haziq. Baca Al-Quran dan tafsir ayat dalam bahasa Indonesia dengan mudah",
-        images: ["/images/OG_Banner.png"],
+        images: ["https://res.cloudinary.com/dspkhqhkv/image/upload/v1688470466/Haziq/OG_Banner.png"],
     },
 };
 
