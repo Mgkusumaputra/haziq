@@ -5,9 +5,11 @@ import Footer from "@components/Footer";
 export default function Home() {
     return (
         <>
-            <Hero />
-            <DaftarSurah />
-            <Footer />
+            <div className="flex flex-col h-screen">
+                <Hero />
+                <DaftarSurah />
+                <Footer />
+            </div>
         </>
     );
 }

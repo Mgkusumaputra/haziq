@@ -22,7 +22,7 @@ export default function DaftarSurah() {
     });
 
     return (
-        <div className="w-full flex flex-col items-center px-6 max-w-5xl gap-3 mt-16 mb-7 mx-auto">
+        <div className="w-full max-h-max flex flex-col items-center px-6 max-w-5xl gap-3 mt-16 mb-7 mx-auto">
             <h1 className="text-2xl font-semibold underline">Daftar Surah</h1>
             <input
                 type="search"
