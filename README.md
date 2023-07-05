@@ -1,34 +1,50 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+<div align="center">
+    <a href="https://haziq.mgkusumaputra.me">
+        <img src="https://res.cloudinary.com/dspkhqhkv/image/upload/v1688470690/Haziq/Haziq_Icon.png" width="90" height="90"/>
+    </a>
+    <h1>Haziq</h1>
+    <p>Pengalaman Membaca Al-Quran yang praktis dan interaktif dengan Haziq.</p>
+    <p>
+    <a href="https://haziq.mgkusumaputra.me"><strong>Website</strong></a> · <a href="https://github.com/mgkusumputra/haziq/issues"><strong>Laporkan Bug</strong></a> · <a href="https://github.com/mgkusumputra/haziq/issues"><strong>Request Fitur</strong></a>
+  </p>
+  <a href="https://github.com/mgkusumaputra/haziq/stargazers">
+    <img alt="GitHub Repo stars" src="https://img.shields.io/github/stars/mgkusumaputra/haziq?style=flat&labelColor=3D5656&color=68B984">
+  </a>
+  <a href="https://github.com/mgkusumaputra/haziq/network/members">
+    <img alt="GitHub forks" src="https://img.shields.io/github/forks/mgkusumaputra/haziq?style=flat&labelColor=3D5656&color=68B984">
+  </a>
+  <a href="https://github.com/Mgkusumaputra/haziq/deployments/activity_log?environment=Production">
+    <img alt="GitHub deployments" src="https://img.shields.io/github/deployments/mgkusumaputra/haziq/production?label=deployement&style=flat&labelColor=3D5656&color=68B984">
+  </a>
+  <a href="https://github.com/Mgkusumaputra/haziq/issues">
+    <img alt="GitHub issues" src="https://img.shields.io/github/issues/mgkusumaputra/haziq?style=flat&labelColor=3D5656&color=68B984">
+  </a>
+  <a href="https://github.com/Mgkusumaputra/haziq/releases">
+    <img alt="GitHub package.json version (branch)" src="https://img.shields.io/github/package-json/v/mgkusumaputra/haziq/master?label=version&style=flat&labelColor=3D5656&color=68B984">
+  </a>
+</div>
 
-## Getting Started
+## Overview
+Haziq merupakan sebuah website yang didedikasikan untuk memfasilitasi pengguna dalam membaca Al-Quran dan memahami tafsir ayat secara digital. Dengan desain yang sederhana dan intuitif, Haziq menyediakan akses mudah dan praktis ke Al-Quran dalam bahasa Indonesia.
 
-First, run the development server:
+## Fitur
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-```
+1. Kumpulan Doa 
+2. Filter Juz Amma
+3. Search Surah
+4. Ayat Favorit (Bookmark)
+5. Tafsir Ayat
+6. Audio (Full surah/per ayat)
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Tech Stack
+- Next.js 13 (App dir)
+- Tailwind CSS
+- Data [API Equran.id](https://equran.id)
+- Vercel
+- Umami Analytics
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Setup
+Instal terlebih dahulu seluruh dependencies yang digunakan `npm install` (atau `npm i`).
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+Lalu mulai jalankan development server `npm run dev`
+Buka [http://localhost:3000](http://localhost:3000/) kemudian periksa hasilnya
